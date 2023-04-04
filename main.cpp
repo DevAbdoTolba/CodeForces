@@ -295,6 +295,9 @@ void BoyOrGirl();
 // https://codeforces.com/problemset/problem/282/A
 void Bitpp();
 
+// https://codeforces.com/problemset/problem/1800/A
+void IsItaCat();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -317,11 +320,38 @@ int main()
     // CountingElements();
     // FrontEnd();
     // EvenHateOdd();
-    // ! BoyOrGirl();
+    // BoyOrGirl();
     // Bitpp();
+    // IsItaCat();
 
     return 0;
 }
+
+/*
+void IsItaCat()
+{
+    int T;
+    cin >> T;
+
+    while (T--)
+    {
+        // take a string of length n
+        int n;
+
+        cin >> n;
+
+        string s;
+        cin >> s;
+
+        // to lower
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
+
+        s.erase(unique(s.begin(), s.end()), s.end());
+
+        cout << (s == "meow" ? "YES" : "NO") << endl;
+    }
+}
+*/
 
 /*
 void Bitpp()
@@ -345,14 +375,17 @@ void Bitpp()
 /*
 void BoyOrGirl()
 {
+    list<char> l;
     string s;
     cin >> s;
-    sort(s.begin(), s.end());
-    s.erase(unique(s.begin(), s.end()), s.end());
+    for (int i = 0; i < s.length(); i++)
+    {
+        l.push_back(s[i]);
+    }
+    l.sort();
+    l.unique();
 
-    cout << s << endl;
-
-    s.length() % 2 == 0 ? cout << "CHAT WITH HER!" : cout << "IGNORE HIM!";
+    l.size() % 2 == 0 ? cout << "CHAT WITH HER!" : cout << "IGNORE HIM!";
 }
 */
 
