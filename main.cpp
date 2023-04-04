@@ -289,6 +289,12 @@ void FrontEnd();
 // https://codeforces.com/group/MWSDmqGsZm/contest/329103/problem/G
 void EvenHateOdd();
 
+// https://codeforces.com/problemset/problem/236/A
+void BoyOrGirl();
+
+// https://codeforces.com/problemset/problem/282/A
+void Bitpp();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -311,9 +317,44 @@ int main()
     // CountingElements();
     // FrontEnd();
     // EvenHateOdd();
+    // ! BoyOrGirl();
+    // Bitpp();
 
     return 0;
 }
+
+/*
+void Bitpp()
+{
+    int T, x = 0;
+    cin >> T;
+    while (T--)
+    {
+
+        string s;
+        cin >> s;
+        if (s[0] == '+' || s[2] == '+')
+            x++;
+        else
+            x--;
+    }
+    cout << x;
+}
+*/
+
+/*
+void BoyOrGirl()
+{
+    string s;
+    cin >> s;
+    sort(s.begin(), s.end());
+    s.erase(unique(s.begin(), s.end()), s.end());
+
+    cout << s << endl;
+
+    s.length() % 2 == 0 ? cout << "CHAT WITH HER!" : cout << "IGNORE HIM!";
+}
+*/
 
 /*
 void EvenHateOdd()
