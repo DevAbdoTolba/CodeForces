@@ -298,6 +298,9 @@ void Bitpp();
 // https://codeforces.com/problemset/problem/1800/A
 void IsItaCat();
 
+// Given n of dices, is the number x have a prop to show up when we toes up the n dices
+void DiceProbability();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -323,9 +326,20 @@ int main()
     // BoyOrGirl();
     // Bitpp();
     // IsItaCat();
+    // DiceProbability();
 
     return 0;
 }
+
+/*
+void DiceProbability()
+{
+    ll n, x;
+    cin >> n >> x;
+
+    ((x < n) || (x > (n * 6))) ? cout << "NO" : cout << "YES";
+}
+*/
 
 /*
 void IsItaCat()
