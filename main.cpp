@@ -301,6 +301,12 @@ void IsItaCat();
 // Given n of dices, is the number x have a prop to show up when we toes up the n dices
 void DiceProbability();
 
+// https://codeforces.com/problemset/problem/158/A
+void NextRound();
+
+// https://codeforces.com/problemset/problem/50/A
+void DominoPiling();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -327,9 +333,40 @@ int main()
     // Bitpp();
     // IsItaCat();
     // DiceProbability();
+    // NextRound();
+    // DominoPiling();
 
     return 0;
 }
+
+/*
+void DominoPiling()
+{
+    ll n, m;
+    cin >> n >> m;
+    cout << (n * m) / 2;
+}
+*/
+
+/*
+void NextRound()
+{
+    int n, k, ctr = 0;
+    cin >> n >> k;
+    int temp = n;
+    vector<int> a;
+    while (n--)
+    {
+        int in;
+        cin >> in;
+        a.push_back(in);
+    }
+
+    for (int i = 0; i < a.size(); i++)
+        ((a[i] >= a[k - 1]) && (a[i] > 0)) && ctr++;
+    cout << ctr;
+}
+*/
 
 /*
 void DiceProbability()
