@@ -307,6 +307,12 @@ void NextRound();
 // https://codeforces.com/problemset/problem/50/A
 void DominoPiling();
 
+// https://codeforces.com/problemset/problem/263/A
+void BeautifulMatrix();
+
+// https://codeforces.com/problemset/problem/112/A
+void PetyaAndStrings();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -335,9 +341,59 @@ int main()
     // DiceProbability();
     // NextRound();
     // DominoPiling();
+    // BeautifulMatrix();
+    // PetyaAndStrings(); // !
 
     return 0;
 }
+
+/*
+void PetyaAndStrings()
+{
+    string s1, s2;
+    int ctr1 = 0, ctr2 = 0;
+    cin >> s1 >> s2;
+    transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+    transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
+
+    for (int i = 0; i < s1.size(); i++)
+    {
+        ((int)s1[i] > (int)s2[i]) && ctr1++;
+        ((int)s1[i] < (int)s2[i]) && ctr2++;
+    }
+    if (ctr1 > ctr2)
+    {
+        cout << 1;
+    }
+    else if (ctr2 > ctr1)
+    {
+        cout << -1;
+    }
+    else
+    {
+        cout << 0;
+    }
+}
+*/
+
+/*
+void BeautifulMatrix()
+{
+
+    int in;
+    int weights[] = {4, 3, 2, 3, 4};
+    int subs[] = {0, 1, 2, 1, 0};
+
+    for (int i = 0; i < 25; i++)
+    {
+        cin >> in;
+        if (in == 1)
+        {
+            cout << weights[i % 5] - subs[i / 5];
+        }
+    }
+}
+*/
 
 /*
 void DominoPiling()
