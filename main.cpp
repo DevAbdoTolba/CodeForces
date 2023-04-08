@@ -313,6 +313,9 @@ void BeautifulMatrix();
 // https://codeforces.com/problemset/problem/112/A
 void PetyaAndStrings();
 
+// https://codeforces.com/problemset/problem/339/A
+void HelpfulMaths();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -343,9 +346,47 @@ int main()
     // DominoPiling();
     // BeautifulMatrix();
     // PetyaAndStrings(); // !
+    // HelpfulMaths();
 
     return 0;
 }
+
+/*
+void HelpfulMaths()
+{
+    string s1;
+    cin >> s1;
+
+    // split string into digits and sort them after every + sign
+    vector<int> v;
+    string s2 = "";
+    for (int i = 0; i < s1.size(); i++)
+    {
+        if (s1[i] != '+')
+        {
+            s2 += s1[i];
+        }
+        else
+        {
+            v.push_back(stoi(s2));
+            s2 = "";
+        }
+    }
+
+    v.push_back(stoi(s2));
+
+    sort(v.begin(), v.end());
+
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i];
+        if (i != v.size() - 1)
+        {
+            cout << "+";
+        }
+    }
+}
+*/
 
 /*
 void PetyaAndStrings()
