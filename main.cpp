@@ -316,6 +316,9 @@ void PetyaAndStrings();
 // https://codeforces.com/problemset/problem/339/A
 void HelpfulMaths();
 
+// https://codeforces.com/problemset/problem/281/A
+void WordCapitalization();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -347,9 +350,20 @@ int main()
     // BeautifulMatrix();
     // PetyaAndStrings(); // !
     // HelpfulMaths();
+    // WordCapitalization();
 
     return 0;
 }
+
+/*
+void WordCapitalization()
+{
+    string s;
+    cin >> s;
+    transform(s.begin(), s.begin() + 1, s.begin(), ::toupper);
+    cout << s;
+}
+*/
 
 /*
 void HelpfulMaths()
