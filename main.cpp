@@ -237,6 +237,52 @@ T numberOfOdd(T arr[], T size)
     return count;
 }
 
+template <typename T>
+T numOfUpper(T s)
+{
+    int upper = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        // s[i] > 'Z' && lower++;
+        s[i] <= 'Z' && upper++;
+    }
+
+    return upper;
+}
+
+template <typename T>
+T numOfLower(T s)
+{
+    int lower = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        s[i] > 'Z' && lower++;
+        // s[i] <= 'Z' && upper++;
+    }
+
+    return lower;
+}
+
+template <typename _word, typename _result>
+void numOfUpperAndLower(_word s, _result cases)
+{
+    int lower = 0, upper = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        s[i] > 'Z' && lower++;
+        s[i] <= 'Z' && upper++;
+    }
+
+    cases[0] = lower;
+    cases[1] = upper;
+}
+
+template <typename T>
+T inputReturn(T &x)
+{
+    cin >> x;
+    return x;
+}
 //=============//         //==============//
 //=============//  Links  //==============//
 //=============//       //============= //
@@ -316,8 +362,29 @@ void PetyaAndStrings();
 // https://codeforces.com/problemset/problem/339/A
 void HelpfulMaths();
 
+// https://codeforces.com/problemset/problem/118/A
+void StringTask();
+
 // https://codeforces.com/problemset/problem/281/A
 void WordCapitalization();
+
+// https://codeforces.com/problemset/problem/118/A
+void StringTask();
+
+// https://codeforces.com/problemset/problem/266/A
+void StonesOnTheTable();
+
+// https://codeforces.com/problemset/problem/791/A
+void BearAndBigBrother();
+
+// https://codeforces.com/problemset/problem/546/A
+void SoldierAndBananas();
+
+// https://codeforces.com/problemset/problem/59/A
+void Word();
+
+// https://codeforces.com/problemset/problem/69/A
+void YoungPhysicist();
 
 //=============//         //==============//
 //=============//  MAIN  //==============//
@@ -351,9 +418,132 @@ int main()
     // PetyaAndStrings(); // !
     // HelpfulMaths();
     // WordCapitalization();
+    // StringTask();
+    // StonesOnTheTable();
+    // BearAndBigBrother();
+    // SoldierAndBananas();
+    // Word();
+    YoungPhysicist();
 
     return 0;
 }
+
+void YoungPhysicist()
+{
+    ll ctr1 = 0, ctr2 = 0, ctr3 = 0;
+    ll n, in;
+    cin >> n;
+
+    while (n--)
+    {
+        // sum the input directly
+        for (int i = 0; i < 3; i++)
+        {
+            cin >> in;
+            i == 0 ? ctr1 += in : i == 1 ? ctr2 += in
+                                         : ctr3 += in;
+        }
+    }
+    !ctr1 && !ctr2 && !ctr3 ? cout << "YES" : cout << "NO";
+}
+
+/*
+void Word()
+{
+    string input; // declare a string variable
+    cin >> input; // read a string from standard input
+
+    int cases[2];                     // declare a vector of integers with size of 2
+    numOfUpperAndLower(input, cases); // call a function to store the number of upper and lower cases in the vector
+    cout << "lower: " << cases[0] << endl;
+    cout << "upper: " << cases[1] << endl;
+    int (*opr)(int);                                           // declare a function pointer
+    cases[1] > cases[0] ? opr = toupper : opr = tolower;       // assign the function pointer to the appropriate function
+    transform(input.begin(), input.end(), input.begin(), opr); // call transform function to apply the function pointer to the string
+
+    cout << input; // write the string to standard output
+}
+*/
+
+/*
+void SoldierAndBananas()
+{
+    int k, n, w;
+    cin >> k >> n >> w;
+    int sum = 0;
+    for (int i = 1; i <= w; i++)
+    {
+        sum += i * k;
+    }
+    if (sum > n)
+    {
+        cout << sum - n;
+    }
+    else
+    {
+        cout << 0;
+    }
+}
+*/
+
+/*
+void BearAndBigBrother()
+{
+    int a, b;
+    cin >> a >> b;
+    int count = 0;
+    while (a <= b)
+    {
+        a *= 3;
+        b *= 2;
+        count++;
+    }
+    cout << count;
+}
+*/
+
+/*
+void StonesOnTheTable()
+{
+    int n;
+    int count = 0;
+    cin >> n;
+    string s;
+    cin >> s;
+    for (int i = 0; i < n; i++)
+    {
+        s[i] == s[i + 1] && count++;
+    }
+    cout << count;
+}
+*/
+
+/*
+void StringTask()
+{
+    char vowels[] = {'a', 'o', 'y', 'e', 'u', 'i'};
+    char input;
+    string s;
+
+    while (cin >> input)
+    {
+        if (input >= 'A' && input <= 'Z')
+        {
+            input += 32;
+        }
+
+        if (find(begin(vowels), end(vowels), input) == end(vowels))
+        {
+            s += '.';
+            s += input;
+        }
+    }
+
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+
+    cout << s << endl;
+}
+*/
 
 /*
 void WordCapitalization()
