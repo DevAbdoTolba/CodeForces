@@ -386,6 +386,9 @@ void Word();
 // https://codeforces.com/problemset/problem/69/A
 void YoungPhysicist();
 
+// https://codeforces.com/problemset/problem/734/A
+void AntonAndDanik();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -423,11 +426,31 @@ int main()
     // BearAndBigBrother();
     // SoldierAndBananas();
     // Word();
-    YoungPhysicist();
+    // YoungPhysicist();
+    // AntonAndDanik();
 
     return 0;
 }
 
+/*
+void AntonAndDanik()
+{
+    int number_of_games;
+    cin >> number_of_games;
+    int a = 0, d = 0;
+    char game_winner;
+    while (number_of_games--)
+    {
+        cin >> game_winner;
+        game_winner == 'A' ? a++ : d++;
+    }
+
+    (a > d) ? cout << "Anton" : (a < d) ? cout << "Danik"
+                                        : cout << "Friendship";
+}
+*/
+
+/*
 void YoungPhysicist()
 {
     ll ctr1 = 0, ctr2 = 0, ctr3 = 0;
@@ -446,6 +469,7 @@ void YoungPhysicist()
     }
     !ctr1 && !ctr2 && !ctr3 ? cout << "YES" : cout << "NO";
 }
+*/
 
 /*
 void Word()
