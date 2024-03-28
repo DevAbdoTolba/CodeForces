@@ -569,7 +569,7 @@ int main()
     // NextRound();
     // DominoPiling();
     // BeautifulMatrix();
-    // PetyaAndStrings(); // !
+    // PetyaAndStrings();
     // HelpfulMaths();
     // WordCapitalization();
     // StringTask();
@@ -584,10 +584,11 @@ int main()
     // GroupingIncreases();
     // WrongSubtraction();
     // Football();
-    Hulk();
+    // Hulk();
     return 0;
 }
 
+/*
 void Hulk()
 {
     int n;
@@ -600,6 +601,7 @@ void Hulk()
         cout << (i % 2 == 0 ? even : odd) << (i == n ? dot : comma);
     }
 }
+*/
 
 /*
 void Football()
@@ -1251,19 +1253,19 @@ void PetyaAndStrings()
     {
         ((int)s1[i] > (int)s2[i]) && ctr1++;
         ((int)s1[i] < (int)s2[i]) && ctr2++;
+        if (ctr1 > ctr2)
+        {
+            cout << 1;
+            return;
+        }
+        else if (ctr2 > ctr1)
+        {
+            cout << -1;
+            return;
+        }
     }
-    if (ctr1 > ctr2)
-    {
-        cout << 1;
-    }
-    else if (ctr2 > ctr1)
-    {
-        cout << -1;
-    }
-    else
-    {
-        cout << 0;
-    }
+
+    cout << 0;
 }
 */
 
