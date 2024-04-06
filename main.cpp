@@ -537,6 +537,9 @@ void Football();
 // https://codeforces.com/problemset/problem/705/A
 void Hulk();
 
+// https://codeforces.com/problemset/problem/41/A
+void Translation();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -585,8 +588,20 @@ int main()
     // WrongSubtraction();
     // Football();
     // Hulk();
+    // Translation();
     return 0;
 }
+
+/*
+void Translation()
+{
+    string s1, s2;
+    cin >> s1 >> s2;
+
+    reverse(s2.begin(), s2.end());
+    cout << ((s1.compare(s2) == 0) ? "YES" : "NO");
+}
+*/
 
 /*
 void Hulk()
