@@ -540,6 +540,8 @@ void Hulk();
 // https://codeforces.com/problemset/problem/41/A
 void Translation();
 
+// https://codeforces.com/contest/255/problem/A
+void GregWorkout();
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -589,8 +591,31 @@ int main()
     // Football();
     // Hulk();
     // Translation();
+    // GregWorkout();
     return 0;
 }
+
+/*
+
+void GregWorkout()
+{
+    int T;
+    cin >> T;
+    int f = 0;
+    int fa[3] = {0};
+    while (T--)
+    {
+        int v;
+        cin >> v;
+        f % 3 == 0 && (fa[0] += v);
+        f % 3 == 1 && (fa[1] += v);
+        f % 3 == 2 && (fa[2] += v);
+        f++;
+    }
+    cout << ((fa[0] > fa[1] && fa[0] > fa[2]) ? "chest" : (fa[1] > fa[0] && fa[1] > fa[2]) ? "biceps"
+                                                                                           : "back");
+}
+*/
 
 /*
 void Translation()

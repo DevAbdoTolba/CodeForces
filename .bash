@@ -5,6 +5,6 @@ g++ main.cpp
 # run the program
 clear
 echo "Code is running UwU"
-./a.out
+./a.exe
 printf "\nDone <3\n\n"
 
