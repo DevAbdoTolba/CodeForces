@@ -542,6 +542,13 @@ void Translation();
 
 // https://codeforces.com/contest/255/problem/A
 void GregWorkout();
+
+// https://codeforces.com/contest/1971/problem/C
+void ClockandStrings();
+
+// https://codeforces.com/problemset/problem/825/A
+void BinaryProtocol();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -592,9 +599,65 @@ int main()
     // Hulk();
     // Translation();
     // GregWorkout();
+    // ClockandStrings();
+    // BinaryProtocol(); // ! Did not read the description
     return 0;
 }
 
+// void BinaryProtocol()
+// {
+//     int n, cnt = 0, flag = -1;
+//     cin >> n;
+//     string x;
+//     cin >> x;
+
+//     for (int i = 0; i < n; i++)
+//     {
+//         if (flag == -1)
+//             flag = x[i] - 48;
+//         // cout << "FLAG " << flag << "  X " << x[i] << endl;
+//         // cout << "CNT" << cnt << endl;
+//         // cout << "X" << x[i] << endl;
+//         if (x[i] == 49) // 1 == 49 ASCII
+//             cnt++;
+//         if (x[i] == 48) // 0 == 48 ASCII
+//             cnt--;
+//         if (flag != x[i]-48)
+//         {
+//             flag = x[i] - 48;
+//             cout << cnt;
+//         }
+//         if(x[i] == '\0') cout << cnt;
+//     }
+// }
+
+/*
+void ClockandStrings()
+{
+    int T,
+        arr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    cin >> T;
+    while (T--)
+    {
+        int f = 0;
+        int a, b, c, d;
+        cin >> a >> b >> c >> d;
+        if (a > b)
+            swap(a, b);
+
+        if (c > d)
+            swap(c, d);
+
+        for (int i = a; i <= b; i++)
+        {
+            c == arr[i] && f++;
+            d == arr[i] && f++;
+        }
+
+        cout << ((f == 1) ? "YES" : "NO") << endl;
+    }
+}
+*/
 /*
 
 void GregWorkout()
