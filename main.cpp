@@ -413,6 +413,7 @@ T inputReturn(T &x)
     cin >> x;
     return x;
 }
+
 //=============//         //==============//
 //=============//  Links  //==============//
 //=============//       //============= //
@@ -549,6 +550,12 @@ void ClockandStrings();
 // https://codeforces.com/problemset/problem/825/A
 void BinaryProtocol();
 
+// https://codeforces.com/problemset/problem/670/D1
+void MagicPowder1();
+
+// https://codeforces.com/contest/670/problem/D2
+void MagicPowder2();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -601,8 +608,150 @@ int main()
     // GregWorkout();
     // ClockandStrings();
     // BinaryProtocol(); // ! Did not read the description
+    // MagicPowder1();
+    // MagicPowder2();
     return 0;
 }
+
+/*
+void MagicPowder2(){
+
+    ull N, magicPowder;
+    cin >> N >> magicPowder;
+    ull required[N], available[N];
+
+    // inserting data
+    {
+        for (ull i = 0; i < N; i++)
+        {
+            cin >> required[i];
+        }
+        for (ull i = 0; i < N; i++)
+        {
+            cin >> available[i];
+        }
+    }
+    ull mid, low, high, ans = 0;
+    low = 0;
+    high = 1e10;
+    mid = (low + high) / 2;
+
+    bool can = false;
+
+    while (true)
+    {
+
+        // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
+        // {
+        //     cout << 2;
+        //     break;
+        // }
+
+        ull neededMagicPowder = 0;
+        for (int i = 0; i < N; i++)
+        {
+            // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
+            if (required[i] * mid > available[i])
+            {
+                neededMagicPowder += required[i] * mid - available[i];
+            }
+            can = neededMagicPowder <= magicPowder;
+            if (neededMagicPowder > magicPowder)
+            {
+                can = false;
+                break;
+            }
+        }
+        // cout << low << " : " << high << endl;
+        if (can)
+        {
+            ans = mid;
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+        if (low > high)
+        {
+            cout << ans;
+            break;
+        }
+        mid = (low + high) / 2;
+        // cout << endl << mid;
+    }
+}
+*/
+
+/*
+void MagicPowder1()
+{
+    int N, magicPowder;
+    cin >> N >> magicPowder;
+    int required[N], available[N];
+
+    // inserting data
+    {
+        for (int i = 0; i < N; i++)
+        {
+            cin >> required[i];
+        }
+        for (int i = 0; i < N; i++)
+        {
+            cin >> available[i];
+        }
+    }
+    int mid, low, high, ans = 0;
+    low = 0;
+    high = 1e10;
+    mid = (low + high) / 2;
+
+    bool can = false;
+
+    while (true)
+    {
+
+        // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
+        // {
+        //     cout << 2;
+        //     break;
+        // }
+
+        int neededMagicPowder = 0;
+        for (int i = 0; i < N; i++)
+        {
+            // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
+            if (required[i] * mid > available[i])
+            {
+                neededMagicPowder += required[i] * mid - available[i];
+            }
+            can = neededMagicPowder <= magicPowder;
+            if (neededMagicPowder > magicPowder)
+            {
+                can = false;
+                break;
+            }
+        }
+        // cout << low << " : " << high << endl;
+        if (can)
+        {
+            ans = mid;
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+        if (low > high)
+        {
+            cout << ans;
+            break;
+        }
+        mid = (low + high) / 2;
+        // cout << endl << mid;
+    }
+}
+*/
 
 // void BinaryProtocol()
 // {
