@@ -556,12 +556,15 @@ void MagicPowder1();
 // https://codeforces.com/contest/670/problem/D2
 void MagicPowder2();
 
+// https://codeforces.com/contest/371/problem/C
+void Hamburgers();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
 
 int main()
-{
+{   
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -610,8 +613,77 @@ int main()
     // BinaryProtocol(); // ! Did not read the description
     // MagicPowder1();
     // MagicPowder2();
+    // Hamburgers();
+
     return 0;
 }
+
+/*
+void Hamburgers()
+{
+    string recipe;
+    cin >> recipe;
+    // calculate of B and S and C
+    int Nb = 0, Ns = 0, Nc = 0;
+    for (int i = 0; i < recipe.length(); i++)
+    {
+        if (recipe[i] == 'B')
+            Nb++;
+        if (recipe[i] == 'S')
+            Ns++;
+        if (recipe[i] == 'C')
+            Nc++;
+    }
+
+    ull Hb, Hs, Hc;
+    ull Pb, Ps, Pc;
+    ull money;
+
+    cin >> Hb >> Hs >> Hc;
+    cin >> Pb >> Ps >> Pc;
+    cin >> money;
+    bool can = false;
+
+    ull low = 1, high = 10e12, mid = 0, ans = 0;
+    int x = 200;
+    while (low <= high)
+    {
+        ull requiredMoney = 0;
+        can = true;
+        mid = (low + high) / 2;
+
+        if ((Nb * mid) > Hb)
+            requiredMoney += (((Nb * mid) - Hb) * Pb);
+        if ((Ns * mid) > Hs)
+            requiredMoney += (((Ns * mid) - Hs) * Ps);
+        if ((Nc * mid) > Hc)
+            requiredMoney += (((Nc * mid) - Hc) * Pc);
+
+        // cout << ((Nb * mid) > Hb) << " : " << (((Nb * mid) - Hb)) << endl;
+        // cout << ((Ns * mid) > Hs) << " : " << (((Ns * mid) - Hs)) << endl;
+        // cout << ((Nc * mid) > Hc) << " : " << (((Nc * mid) - Hc)) << endl;
+        // cout << "required money " << requiredMoney << endl;
+        // cout << low << " : " << high << " can: " << can << endl
+        //  << endl;
+
+        if (requiredMoney > money)
+        {
+            can = false;
+        }
+
+        if (can)
+        {
+            low = mid + 1;
+            ans = mid;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    cout << ans;
+}
+*/
 
 /*
 void MagicPowder2(){
@@ -631,7 +703,7 @@ void MagicPowder2(){
             cin >> available[i];
         }
     }
-    ull mid, low, high, ans = 0;
+    ull mid, low, Nigh, ans = 0;
     low = 0;
     high = 1e10;
     mid = (low + high) / 2;
