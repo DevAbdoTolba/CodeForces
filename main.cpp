@@ -109,6 +109,10 @@
 #define FqEiXJwxuEjqUJu ;
 #define CXihmWELhqthZRO ZSyyrnUaVBGMLnj
 #define YVboUvBLXIAzxHx ICZBOzCzrRofsgH
+#define T int T;
+#define Ti cin >> T;
+#define Tl while(T--){
+
 
 using namespace std;
 
@@ -559,12 +563,15 @@ void MagicPowder2();
 // https://codeforces.com/contest/371/problem/C
 void Hamburgers();
 
+// https://codeforces.com/problemset/problem/1535/A
+void FairPlayoff();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
 
 int main()
-{   
+{
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -614,9 +621,28 @@ int main()
     // MagicPowder1();
     // MagicPowder2();
     // Hamburgers();
+    FairPlayoff();
+
 
     return 0;
 }
+
+
+// void FairPlayoff()
+// {
+//     int T;
+//     cin >> T;
+//     while (T--)
+//     {
+//         int a, b, c, d;
+//         cin >> a >> b >> c >> d;
+//         if (b > a)
+//             swap(a, b);
+//         if (d > c)
+//             swap(c, d);
+//         cout << ((a > d && c > b) ? "YES" : "NO") << endl;
+//     }
+// }
 
 /*
 void Hamburgers()
