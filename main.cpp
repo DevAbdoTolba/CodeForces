@@ -109,10 +109,9 @@
 #define FqEiXJwxuEjqUJu ;
 #define CXihmWELhqthZRO ZSyyrnUaVBGMLnj
 #define YVboUvBLXIAzxHx ICZBOzCzrRofsgH
-#define T int T;
-#define Ti cin >> T;
-#define Tl while(T--){
-
+#define _ int ___;
+#define _i cin >> ___;
+#define _l while (___--)
 
 using namespace std;
 
@@ -308,6 +307,19 @@ bool isPower(int x, long int y)
     return (pow == y);
 }
 
+template <typename T>
+bool isPrime(T number){
+
+    if(number < 2) return false;
+    if(number == 2) return true;
+    if(number % 2 == 0) return false;
+    for(T i=3; (i*i)<=number; i+=2){
+        if(number % i == 0 ) return false;
+    }
+    return true;
+
+}
+
 ll power(ll a, ll b)
 {
     ll res = 1;
@@ -417,6 +429,7 @@ T inputReturn(T &x)
     cin >> x;
     return x;
 }
+
 
 //=============//         //==============//
 //=============//  Links  //==============//
@@ -566,6 +579,40 @@ void Hamburgers();
 // https://codeforces.com/problemset/problem/1535/A
 void FairPlayoff();
 
+// https://codeforces.com/problemset/problem/1692/C
+void WherestheBishop();
+
+
+// Sheet #8 (General easy) 
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/C
+void KokoAndTheTransformation();
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/B
+// Watermelon(); // * old
+
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/D
+// BearAndBigBrother() // * old
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/Z
+void Decoding();
+
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/K
+void PrimeFibonacci();
+
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/A
+void PalindromesReplace();
+
+// https://codeforces.com/group/buBiYWKr0V/contest/568538/problem/A
+void Sale();
+
+// https://codeforces.com/group/buBiYWKr0V/contest/568538/problem/B
+void QuestionMarks();
+
+// https://codeforces.com/group/buBiYWKr0V/contest/568538/problem/C
+void FindTheArray();
+
 //=============//         //==============//
 //=============//  MAIN  //==============//
 //=============//       //============= //
@@ -621,30 +668,246 @@ int main()
     // MagicPowder1();
     // MagicPowder2();
     // Hamburgers();
-    FairPlayoff();
-
+    // FairPlayoff();
+    // WherestheBishop(); // ! idk
+    // Sheet #8 (General easy) 
+    // https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/C
+    // KokoAndTheTransformation();
+    // Decoding();
+    // PrimeFibonacci();
+    // PalindromesReplace();
+    // Sale();
+    // QuestionMarks();
+    // FindTheArray();
 
     return 0;
 }
 
+void FindTheArray(){
+    int T; cin >> T;
+    while(T--){
+        int n; cin >> n;
+        
+    }
+}
 
-// void FairPlayoff()
-// {
-//     int T;
-//     cin >> T;
-//     while (T--)
-//     {
-//         int a, b, c, d;
-//         cin >> a >> b >> c >> d;
-//         if (b > a)
-//             swap(a, b);
-//         if (d > c)
-//             swap(c, d);
-//         cout << ((a > d && c > b) ? "YES" : "NO") << endl;
-//     }
-// }
+void QuestionMarks(){
 
-/*
+    int T; cin >> T;
+    while(T--){
+        int arr[4] = {0};
+
+        int n; cin >> n;
+        string s; cin >> s;
+        
+        for(int i = 0; i < s.size(); i++){
+            switch (s[i])
+            {
+            case 'A':
+                arr[0]++;
+                break;
+                
+            case 'B':
+                arr[1]++;
+                break;
+                
+            case 'C':
+                arr[2]++;
+                break;
+                
+            case 'D':
+                arr[3]++;
+                break;
+            
+            default:
+                break;
+            }
+        }
+
+        if(arr[0] > n) arr[0] = n;
+        if(arr[1] > n) arr[1] = n;
+        if(arr[2] > n) arr[2] = n;
+        if(arr[3] > n) arr[3] = n;
+            
+        cout << arr[0] + arr[1] + arr[2] + arr[3] << "\n";    
+    }
+
+}
+
+
+
+
+void Sale(){
+    ll n,m;
+    cin >> n >> m;
+
+    vector<ll> v(n);
+    for(ll i = 0; i < n; i++){
+        cin >> v[i];
+    }
+
+    sort(v.begin(), v.end());
+
+    ll sum = 0;
+    for(ll i = 0; i < m; i++){
+        if(v[i] < 0){
+            sum += v[i];
+        }
+    }
+
+    cout << abs(sum);
+}
+
+
+void PalindromesReplace(){
+    
+}
+
+
+void PrimeFibonacci(){
+    // // Getting all 50 fib
+    // ull x = 1, prev = 0, tmpPrev = 0;
+
+    // cout << 0 << " ";
+    // for(int i = 0; i < 51; i++){
+    //     tmpPrev = x;
+    //     cout << x << " ";
+    //     x += prev;
+    //     prev = tmpPrev;
+    // }
+
+    // ull fib[] = {
+    //     0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181,6765,10946,17711,28657,46368,75025,121393,196418,317811,514229,832040,1346269,2178309,3524578,5702887,9227465,14930352,24157817,39088169,63245986,102334155,165580141,267914296,433494437,701408733,1134903170,1836311903,2971215073,4807526976,7778742049,12586269025,20365011074
+    // };
+    // // get all fib is prime or not
+    // for(ull i = 0; i < 51; i++){
+    //     cout << (isPrime(fib[i]) ? "prime" : "notprime") << " ";
+
+    // }
+
+
+    int fibPrime[] = {
+        0,0,0,1,1,1,0,1,0,0,0,1,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0
+    };
+
+    ull T; cin >> T;
+    while(T--){
+        ull num; cin >> num;
+        ull chNum = fibPrime[num-1];
+        cout << (chNum == 0 ? "not prime\n" : "prime\n");       
+    }
+}
+
+
+void Decoding(){
+
+int m; cin >> m;
+    string str; cin >> str;
+    char out[m];
+    int boolFlag = true,
+        min = 0,
+        max = m-1
+    ;
+    for(int i = m-1; i >= 0 ; i--){
+        if(boolFlag){
+            out[max] = str[i];
+            boolFlag = !boolFlag;
+            max--;
+        } else {
+            out[min] = str[i];
+            min++;
+            boolFlag = !boolFlag;
+        }
+    }
+    for(int i = 0; i < m; i++){
+        cout<<out[i];
+    }
+}
+
+
+
+void KokoAndTheTransformation(){
+    int n,m,
+     sum1 = 0,sum2 = 0
+     ;
+    int tmp;
+    cin >> n
+        >> m;
+    while(n--) {
+        cin >> tmp;
+        sum1 += tmp;
+    } 
+    while(m--) {
+        cin >> tmp;
+        sum2 += tmp;
+    } 
+    if(sum1 == sum2)
+        cout << "Yes";
+    else 
+        cout << "No";
+
+}
+
+
+// Sheet #8 (General easy)
+// https://codeforces.com/group/MWSDmqGsZm/contest/223206/problem/C
+
+
+
+
+void WherestheBishop()
+{
+    _ _i _l
+    {
+        int checked2 = 0,
+            row = 1, col = 1, firstLast[2];
+
+        char in;
+        while (col <= 8 )
+        {
+
+            checked2 = 0;
+            row = 1;
+
+            while (row <= 8 )
+            {
+
+                cin >> in;
+                if (in == '#')
+                {
+                    checked2++;
+                    if (checked2 == 1)
+                        firstLast[0] = row;
+                    else if (checked2 == 2)
+                        firstLast[1] = row;
+                }
+                cout << in << " " << checked2;
+
+                row++;
+            }
+            cout << endl;
+            col++;
+        }
+    }
+}
+
+void FairPlayoff()
+{
+    int T;
+    cin >> T;
+    while (T--)
+    {
+        int a, b, c, d;
+        cin >> a >> b >> c >> d;
+        if (b > a)
+            swap(a, b);
+        if (d > c)
+            swap(c, d);
+        cout << ((a > d && c > b) ? "YES" : "NO") << endl;
+    }
+}
+
+
 void Hamburgers()
 {
     string recipe;
@@ -709,147 +972,147 @@ void Hamburgers()
     }
     cout << ans;
 }
-*/
 
-/*
-void MagicPowder2(){
 
-    ull N, magicPowder;
-    cin >> N >> magicPowder;
-    ull required[N], available[N];
 
-    // inserting data
-    {
-        for (ull i = 0; i < N; i++)
-        {
-            cin >> required[i];
-        }
-        for (ull i = 0; i < N; i++)
-        {
-            cin >> available[i];
-        }
-    }
-    ull mid, low, Nigh, ans = 0;
-    low = 0;
-    high = 1e10;
-    mid = (low + high) / 2;
+// void MagicPowder2(){
 
-    bool can = false;
+//     ull N, magicPowder;
+//     cin >> N >> magicPowder;
+//     ull required[N], available[N];
 
-    while (true)
-    {
+//     // inserting data
+//     {
+//         for (ull i = 0; i < N; i++)
+//         {
+//             cin >> required[i];
+//         }
+//         for (ull i = 0; i < N; i++)
+//         {
+//             cin >> available[i];
+//         }
+//     }
+//     ull mid, low, Nigh, ans = 0;
+//     low = 0;
+//     high = 1e10;
+//     mid = (low + high) / 2;
 
-        // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
-        // {
-        //     cout << 2;
-        //     break;
-        // }
+//     bool can = false;
 
-        ull neededMagicPowder = 0;
-        for (int i = 0; i < N; i++)
-        {
-            // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
-            if (required[i] * mid > available[i])
-            {
-                neededMagicPowder += required[i] * mid - available[i];
-            }
-            can = neededMagicPowder <= magicPowder;
-            if (neededMagicPowder > magicPowder)
-            {
-                can = false;
-                break;
-            }
-        }
-        // cout << low << " : " << high << endl;
-        if (can)
-        {
-            ans = mid;
-            low = mid + 1;
-        }
-        else
-        {
-            high = mid - 1;
-        }
-        if (low > high)
-        {
-            cout << ans;
-            break;
-        }
-        mid = (low + high) / 2;
-        // cout << endl << mid;
-    }
-}
-*/
+//     while (true)
+//     {
 
-/*
-void MagicPowder1()
-{
-    int N, magicPowder;
-    cin >> N >> magicPowder;
-    int required[N], available[N];
+//         // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
+//         // {
+//         //     cout << 2;
+//         //     break;
+//         // }
 
-    // inserting data
-    {
-        for (int i = 0; i < N; i++)
-        {
-            cin >> required[i];
-        }
-        for (int i = 0; i < N; i++)
-        {
-            cin >> available[i];
-        }
-    }
-    int mid, low, high, ans = 0;
-    low = 0;
-    high = 1e10;
-    mid = (low + high) / 2;
+//         ull neededMagicPowder = 0;
+//         for (int i = 0; i < N; i++)
+//         {
+//             // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
+//             if (required[i] * mid > available[i])
+//             {
+//                 neededMagicPowder += required[i] * mid - available[i];
+//             }
+//             can = neededMagicPowder <= magicPowder;
+//             if (neededMagicPowder > magicPowder)
+//             {
+//                 can = false;
+//                 break;
+//             }
+//         }
+//         // cout << low << " : " << high << endl;
+//         if (can)
+//         {
+//             ans = mid;
+//             low = mid + 1;
+//         }
+//         else
+//         {
+//             high = mid - 1;
+//         }
+//         if (low > high)
+//         {
+//             cout << ans;
+//             break;
+//         }
+//         mid = (low + high) / 2;
+//         // cout << endl << mid;
+//     }
+// }
 
-    bool can = false;
 
-    while (true)
-    {
 
-        // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
-        // {
-        //     cout << 2;
-        //     break;
-        // }
+// void MagicPowder1()
+// {
+//     int N, magicPowder;
+//     cin >> N >> magicPowder;
+//     int required[N], available[N];
 
-        int neededMagicPowder = 0;
-        for (int i = 0; i < N; i++)
-        {
-            // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
-            if (required[i] * mid > available[i])
-            {
-                neededMagicPowder += required[i] * mid - available[i];
-            }
-            can = neededMagicPowder <= magicPowder;
-            if (neededMagicPowder > magicPowder)
-            {
-                can = false;
-                break;
-            }
-        }
-        // cout << low << " : " << high << endl;
-        if (can)
-        {
-            ans = mid;
-            low = mid + 1;
-        }
-        else
-        {
-            high = mid - 1;
-        }
-        if (low > high)
-        {
-            cout << ans;
-            break;
-        }
-        mid = (low + high) / 2;
-        // cout << endl << mid;
-    }
-}
-*/
+//     // inserting data
+//     {
+//         for (int i = 0; i < N; i++)
+//         {
+//             cin >> required[i];
+//         }
+//         for (int i = 0; i < N; i++)
+//         {
+//             cin >> available[i];
+//         }
+//     }
+//     int mid, low, high, ans = 0;
+//     low = 0;
+//     high = 1e10;
+//     mid = (low + high) / 2;
+
+//     bool can = false;
+
+//     while (true)
+//     {
+
+//         // if (N == 1 && required[0] == 1000000000 && available[0] == 1000000000 && magicPowder == 1000000000)
+//         // {
+//         //     cout << 2;
+//         //     break;
+//         // }
+
+//         int neededMagicPowder = 0;
+//         for (int i = 0; i < N; i++)
+//         {
+//             // cout << required[i] << " : " << mid << " ** " << required[i] * mid << endl;
+//             if (required[i] * mid > available[i])
+//             {
+//                 neededMagicPowder += required[i] * mid - available[i];
+//             }
+//             can = neededMagicPowder <= magicPowder;
+//             if (neededMagicPowder > magicPowder)
+//             {
+//                 can = false;
+//                 break;
+//             }
+//         }
+//         // cout << low << " : " << high << endl;
+//         if (can)
+//         {
+//             ans = mid;
+//             low = mid + 1;
+//         }
+//         else
+//         {
+//             high = mid - 1;
+//         }
+//         if (low > high)
+//         {
+//             cout << ans;
+//             break;
+//         }
+//         mid = (low + high) / 2;
+//         // cout << endl << mid;
+//     }
+// }
+
 
 // void BinaryProtocol()
 // {
@@ -878,7 +1141,7 @@ void MagicPowder1()
 //     }
 // }
 
-/*
+
 void ClockandStrings()
 {
     int T,
@@ -904,8 +1167,8 @@ void ClockandStrings()
         cout << ((f == 1) ? "YES" : "NO") << endl;
     }
 }
-*/
-/*
+
+
 
 void GregWorkout()
 {
@@ -925,9 +1188,9 @@ void GregWorkout()
     cout << ((fa[0] > fa[1] && fa[0] > fa[2]) ? "chest" : (fa[1] > fa[0] && fa[1] > fa[2]) ? "biceps"
                                                                                            : "back");
 }
-*/
 
-/*
+
+
 void Translation()
 {
     string s1, s2;
@@ -936,9 +1199,9 @@ void Translation()
     reverse(s2.begin(), s2.end());
     cout << ((s1.compare(s2) == 0) ? "YES" : "NO");
 }
-*/
 
-/*
+
+
 void Hulk()
 {
     int n;
@@ -951,9 +1214,9 @@ void Hulk()
         cout << (i % 2 == 0 ? even : odd) << (i == n ? dot : comma);
     }
 }
-*/
 
-/*
+
+
 void Football()
 {
 
@@ -979,9 +1242,9 @@ void Football()
     }
     cout << ((freq[0] >= 7) || (freq[1] >= 7) ? "YES" : "NO");
 }
-*/
 
-/*
+
+
 void WrongSubtraction()
 {
     ull digit, step;
@@ -993,9 +1256,9 @@ void WrongSubtraction()
     }
     cout << digit;
 }
-*/
 
-/*
+
+
 BjFeHwBHNRgTesL GroupingIncreases tXTfXcNRBhFvGbu
 {
 FRQRjWCqfQMWJxH GgLpDYpzYqnttUb
@@ -1365,8 +1628,8 @@ NLkRgEOEikdovvm < QpxlLGsVMdPmZmr [](){}();
 }
 }
 
-*/
-/*
+
+
 void PlusMinusSplit()
 {
     ll T;
@@ -1381,9 +1644,9 @@ void PlusMinusSplit()
         cout << abs(plus - minus) << "\n";
     }
 }
-*/
 
-/*
+
+
 void WalletExchange()
 {
     ull T;
@@ -1404,9 +1667,9 @@ void WalletExchange()
         cout << "\n";
     }
 }
-*/
 
-/*
+
+
 void AntonAndDanik()
 {
     int number_of_games;
@@ -1422,9 +1685,9 @@ void AntonAndDanik()
     (a > d) ? cout << "Anton" : (a < d) ? cout << "Danik"
                                         : cout << "Friendship";
 }
-*/
 
-/*
+
+
 void YoungPhysicist()
 {
     ll ctr1 = 0, ctr2 = 0, ctr3 = 0;
@@ -1443,9 +1706,9 @@ void YoungPhysicist()
     }
     !ctr1 && !ctr2 && !ctr3 ? cout << "YES" : cout << "NO";
 }
-*/
 
-/*
+
+
 void Word()
 {
     string input; // declare a string variable
@@ -1461,9 +1724,9 @@ void Word()
 
     cout << input; // write the string to standard output
 }
-*/
 
-/*
+
+
 void SoldierAndBananas()
 {
     int k, n, w;
@@ -1482,9 +1745,9 @@ void SoldierAndBananas()
         cout << 0;
     }
 }
-*/
 
-/*
+
+
 void BearAndBigBrother()
 {
     int a, b;
@@ -1498,9 +1761,9 @@ void BearAndBigBrother()
     }
     cout << count;
 }
-*/
 
-/*
+
+
 void StonesOnTheTable()
 {
     int n;
@@ -1514,9 +1777,9 @@ void StonesOnTheTable()
     }
     cout << count;
 }
-*/
 
-/*
+
+
 void StringTask()
 {
     char vowels[] = {'a', 'o', 'y', 'e', 'u', 'i'};
@@ -1541,9 +1804,9 @@ void StringTask()
 
     cout << s << endl;
 }
-*/
 
-/*
+
+
 void WordCapitalization()
 {
     string s;
@@ -1551,9 +1814,9 @@ void WordCapitalization()
     transform(s.begin(), s.begin() + 1, s.begin(), ::toupper);
     cout << s;
 }
-*/
 
-/*
+
+
 void HelpfulMaths()
 {
     string s1;
@@ -1588,9 +1851,9 @@ void HelpfulMaths()
         }
     }
 }
-*/
 
-/*
+
+
 void PetyaAndStrings()
 {
     string s1, s2;
@@ -1617,9 +1880,9 @@ void PetyaAndStrings()
 
     cout << 0;
 }
-*/
 
-/*
+
+
 void BeautifulMatrix()
 {
 
@@ -1636,18 +1899,18 @@ void BeautifulMatrix()
         }
     }
 }
-*/
 
-/*
+
+
 void DominoPiling()
 {
     ll n, m;
     cin >> n >> m;
     cout << (n * m) / 2;
 }
-*/
 
-/*
+
+
 void NextRound()
 {
     int n, k, ctr = 0;
@@ -1665,9 +1928,9 @@ void NextRound()
         ((a[i] >= a[k - 1]) && (a[i] > 0)) && ctr++;
     cout << ctr;
 }
-*/
 
-/*
+
+
 void DiceProbability()
 {
     ll n, x;
@@ -1675,9 +1938,9 @@ void DiceProbability()
 
     ((x < n) || (x > (n * 6))) ? cout << "NO" : cout << "YES";
 }
-*/
 
-/*
+
+
 void IsItaCat()
 {
     int T;
@@ -1701,9 +1964,9 @@ void IsItaCat()
         cout << (s == "meow" ? "YES" : "NO") << endl;
     }
 }
-*/
 
-/*
+
+
 void Bitpp()
 {
     int T, x = 0;
@@ -1720,9 +1983,9 @@ void Bitpp()
     }
     cout << x;
 }
-*/
 
-/*
+
+
 void BoyOrGirl()
 {
     list<char> l;
@@ -1737,9 +2000,9 @@ void BoyOrGirl()
 
     l.size() % 2 == 0 ? cout << "CHAT WITH HER!" : cout << "IGNORE HIM!";
 }
-*/
 
-/*
+
+
 void EvenHateOdd()
 {
     int T;
@@ -1776,9 +2039,9 @@ void EvenHateOdd()
         }
     }
 }
-*/
 
-/*
+
+
 void FrontEnd()
 {
     int n;
@@ -1798,9 +2061,9 @@ void FrontEnd()
             cout << arr[right--] << " ";
     }
 }
-*/
 
-/*
+
+
 void CountingElements()
 {
     int n;
@@ -1842,9 +2105,9 @@ void CountingElements()
 
     cout << counter << endl;
 }
-*/
 
-/*
+
+
 void ChooseElements()
 {
     ll lengthOfArray, numberOfDigits;
@@ -1866,9 +2129,9 @@ void ChooseElements()
     }
     cout << count << endl;
 }
-*/
 
-/*
+
+
 void Reversing()
 {
     int T;
@@ -1888,9 +2151,9 @@ void Reversing()
         cout << n[j] << " ";
     }
 }
-*/
 
-/*
+
+
 void SquareOrRectangle()
 {
     int T, n1, n2;
@@ -1903,9 +2166,9 @@ void SquareOrRectangle()
             break;
     }
 }
-*/
 
-/*
+
+
 void AlternatingArray()
 {
     int T;
@@ -1927,9 +2190,9 @@ void AlternatingArray()
     cout << min(ctr_0, ctr_1) << endl;
 }
 
-*/
 
-/*
+
+
 void Team()
 {
     int n, ctr = 0;
@@ -1945,9 +2208,9 @@ void Team()
     }
     cout << ctr << endl;
 }
-*/
 
-/*
+
+
 void WayTooLongWords()
 {
     int T;
@@ -1966,9 +2229,9 @@ void WayTooLongWords()
         }
     }
 }
-*/
 
-/*
+
+
 void TheatreSquare()
 {
     ull n, m, a;        // declare the variables
@@ -1984,20 +2247,20 @@ void TheatreSquare()
 
     cout << x * y << endl; // output the number of a's
 }
-*/
 
-/*
-void Watermelon()
-{
-    int n;
-    cin >> n;
 
-    (n % 2 || n == 2) && cout << "NO";
-    (n != 2 && !(n % 2)) && cout << "YES";
-}
-*/
 
-/*
+// void Watermelon()
+// {
+//     int n;
+//     cin >> n;
+
+//     (n % 2 || n == 2) && cout << "NO";
+//     (n != 2 && !(n % 2)) && cout << "YES";
+// }
+
+
+
 void LuckyNumbers()
 {
     int T;
@@ -2035,9 +2298,9 @@ void LuckyNumbers()
         }
     }
 }
-*/
 
-/*
+
+
 void Prediction()
 {
     int n, k;
@@ -2048,9 +2311,9 @@ void Prediction()
     // while(T--)
 
 }
-*/
 
-/*
+
+
 void PointsOnPlane()
 {
     int T;
@@ -2074,9 +2337,9 @@ void PointsOnPlane()
                 cout << res << endl;
         }
 }
-*/
 
-/*
+
+
 void Garland()
 {
     int T;
@@ -2118,4 +2381,4 @@ void Garland()
         }
     }
 }
-*/
+
